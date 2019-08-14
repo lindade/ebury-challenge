@@ -66,12 +66,6 @@ a:hover {
   cursor: pointer;
 }
 
-@media(min-width: 992px) {
-  .resp-pl-5 {
-    padding-left: 3rem
-  }
-}
-
 .showResult {
   border-radius: 50px;
   margin-top: 25px;
@@ -83,4 +77,14 @@ a:hover {
 #footer {
   background: #333;
   padding: 3rem 0;
+}
+
+@media(min-width: 992px) {
+  .resp-pl-5 {
+    padding-left: 3rem;
+  }
+
+  .resp-mt-5 {
+    padding-top: 3rem;
+  }
 }
