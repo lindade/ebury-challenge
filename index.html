@@ -1,91 +1,228 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Ebury Challenge 1</title>
-        <link rel="icon" href="favicon.png">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" CONTENT="ebury, challenge">
-        <link rel="stylesheet" href="custom.css">
-        <script type="text/javascript"  src="calculateFriends.js"></script>
-    </head>
-    
-    <body onload="convertAllStringsToIntArrays();">
-           <div class="bar-white">Ebury Challenge <span class="text-blue">solved by Linda Debray</span></div>
-           <div class="bar-blue">
-                <div class="header-bar-blue">Ebury Challenge l Solution</div>
-           </div>
-    	   <div class="container">
-                <div class="left problem-panel vertical-line">
-                    <h1>The Problem</h1>
-                    <p>Your best friend has just opened a Twitter account and, to help make himself known, he has begun to follow random people.</p>
 
-                    <p>You don’t have a Twitter account but you want to help him by making sure every person he follows then also follows him back.</p>
-
-                    <p>Initially, the account has 0 followers and every twitter account has a confidence level. An account with a <span class="text-blue">Ci</span> confidence level will wait until at least <span class="text-blue">Ci</span> other accounts are following your friend’s twitter account before also following your friend.</p>
-
-                    </p>For example, if <span class="text-blue">Ci = 0</span>, the account will immediately follow your friend back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your friend once it has 2 followers.</p>
-
-                    <p>You know the confidence level of every account your friend has begun to follow and you're prepared to ask some friends that have Twitter accounts to help. Each of these friends have different confidence levels but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum number of friends that you need to ask for help to guarantee that all the accounts will follow your friend’s account back?</p>
-
-                    <p>The input of this problem will have the following format:<br>
-                    <span class="text-blue"> < C(max) “Maximum Confidence Level in Account Owners” > < String of C(max) + 1 single digits ></span></p>
-
-                    <p>The string of digits represents the number of people of each confidence level that your friend begins to follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from 0) represents how many twitter accounts with confidence level <span class="text-blue">k</span> your friend has begun to follow.</p>
-
-                    <p>For example, the string “513” would mean that your friend began to follow 5 accounts with <span class="text-blue">Ci = 0</span>, 1 account with <span class="text-blue">Ci = 1</span>, and 3 accounts with <span class="text-blue">Ci = 2</span>, and the string “107” would mean that your friend began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with <span class="text-blue">Ci = 2</span> (and none with <span class="text-blue">Ci = 1</span>).</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" CONTENT="ebury, challenge">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Ebury Challenge 1</title>
+</head>
 
 
-                    <h1>To Solve</h1>
+<body onload="convertAllStringsToIntArrays();">
 
-                    <p class="text-blue">First case:</p>
+  <!-- HEADER SECTION -->
+  <header>
+    <div class="container py-3">
+      <h2 class="bar-white">Ebury <span class="text-blue-header"> Challenge solved by Linda Debray</span>
+      </h2>
+    </div>
+  </header>
 
-                    <p>1000</p>
-                    <p> 9050000000500000100000000000000000000000080000000000000600500320<br>
-                        0000900000000000000000000050006000000500000000000050500200000080<br>
-                        0800028000000000100001000009040020810000000000000000006000000400<br>
-                        0960000000220000005000600000000700000000000000000000406000060000<br>
-                        0000001704004023000000000050800000000000040000095000100004000000<br>
-                        0000200000030500009060800000000000000000590000000000600000000509<br>
-                        0000000005040000007600900070039000000000040000000009007077000020<br>
-                        2700004090800000300000000004005000000800700000000100004005000000<br>
-                        0050000100000730600000870001010007900002034000400107000100000000<br>
-                        0006080000207000000000000000000070000400007000300000600000070000<br>
-                        0900001000070050500009004000800080007800000040000000000008020400<br>
-                        5000009000700600005000000000006000000007000000076000000007000000<br>
-                        0230000000000000000000010000090000080000001000000000000000000000<br>
-                        0000800000030100000000070000200080000003003000070000000002100000<br>
-                        9000000100000060807000210053000000020000000000100050305054000000<br>00300050000007000400600000011000030000301</p>
+  <!-- HERO SECTION -->
+  <section class="bar-blue">
+    <div class="container">
+      <h1 class="heading-bar-blue">Ebury Challenge l Solution</h1>
+    </div>
+  </section>
 
-                    <p class="text-blue">Second case:</p>
+  <!-- TASK SECTION -->
+  <section>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-sm-12 col-lg-8 vertical-line">
+          <h2 class="mt-5">The Problem</h2>
+          <p>Your best friend has just opened a Twitter account and, to help make himself known, he has begun
+            to
+            follow random people.
+          </p>
 
-                    <p>1000</p> 
-                    <p> 0007003000000000000530000000000000000000303700000090000009090102<br>
-                        0050000610006020000050000060004000000050004000000001000090000000<br>
-                        0000090010000000007000070200100000000700000001000000000000000003<br>
-                        9000800000060070000040043000000900000500000771000000000000700000<br>
-                        0950070004600020000700000000060030000000000000000400000000079050<br>
-                        2050009000000030739000904900094000000780160000001080998000000000<br>
-                        0000700005000100000200000000000800000008010108007018000000000050<br>
-                        0300050000090100000000007000080000000040000009030000700700000000<br>
-                        0830000000080000000000005600000908000000200400000038026000031201<br>
-                        0000001000020000000000050000000000005000000300000000000800000300<br>
-                        3000300000090000000400000200060000000000060100000000000000007004<br>
-                        5200090001000000207000000002002000000097012093000040006090000000<br>
-                        5000040700000000800600701079000300000000000099000000040004020360<br>
-                        7000002000040901030200000000000009900000800020404000060000005000<br>
-                        0063000000072000000000000000000000050000000000000076300090106000<br>000000500000600200000000000406050050001</p>
-                </div>
-                <div class="left result-panel border">
-                    <h1>The Answer</h1>
-                    <p>Press Button to calculate how many friends you need to ask.</p>
-                    <p onclick="countFriends(cmax3, array3);" class="button">First Case</p>
-                    <p onclick="countFriends(cmax4, array4);" class="button">Second Case</p>
-                    <div id="showResult">Needed friends in total: </div>
-                </div>
-           </div>
-    </body>
-</html> 
+          <p>You don’t have a Twitter account but you want to help him by making sure every person he follows
+            then
+            also follows him back.</p>
+
+          <p>Initially, the account has 0 followers and every twitter account has a confidence level. An
+            account with
+            a <span class="text-blue">Ci</span> confidence level will wait until at least <span
+              class="text-blue">Ci</span> other accounts are following your friend’s twitter account
+            before also
+            following your friend.</p>
+
+          </p>For example, if <span class="text-blue">Ci = 0</span>, the account will immediately follow your
+          friend
+          back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your
+          friend once
+          it has 2 followers.</p>
+
+          <p>You know the confidence level of every account your friend has begun to follow and you're
+            prepared to ask
+            some friends that have Twitter accounts to help. Each of these friends have different confidence
+            levels
+            but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum
+            number of
+            friends that you need to ask for help to guarantee that all the accounts will follow your
+            friend’s
+            account back?</p>
+
+          <p>The input of this problem will have the following format:
+            <ul class="text-blue">
+              <li>C(max) “Maximum Confidence Level in Account Owners”</li>
+              <li>String of C(max) + 1 single digits</li>
+            </ul>
+          </p>
+
+          <p>The string of digits represents the number of people of each confidence level that your friend
+            begins to
+            follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from
+            0)
+            represents how many twitter accounts with confidence level <span class="text-blue">k</span> your
+            friend
+            has begun to follow.</p>
+
+          <p>For example, the string “513” would mean that your friend began to follow 5 accounts with <span
+              class="text-blue">Ci = 0</span>, 1 account with <span class="text-blue">Ci = 1</span>, and 3
+            accounts with <span class="text-blue">Ci = 2</span>, and the string “107” would mean that your
+            friend
+            began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with<br>
+            <span class="text-blue">Ci = 2</span> (and none with <span class="text-blue">Ci = 1</span>).</p>
 
 
+          <h2 class="mt-5 mb-3">To Solve</h2>
+
+          <h5 class="text-blue">First case:</h5>
+
+          <p>Maximum Confidence Level:</p>
+          <pre>
+          1000</pre>
+          <p>C(max) String:</p>
+          <pre>
+          9050000000500000100000000000000000000000080000000000000600500320<br>
+          0000900000000000000000000050006000000500000000000050500200000080<br>
+          0800028000000000100001000009040020810000000000000000006000000400<br>
+          0960000000220000005000600000000700000000000000000000406000060000<br>
+          0000001704004023000000000050800000000000040000095000100004000000<br>
+          0000200000030500009060800000000000000000590000000000600000000509<br>
+          0000000005040000007600900070039000000000040000000009007077000020<br>
+          2700004090800000300000000004005000000800700000000100004005000000<br>
+          0050000100000730600000870001010007900002034000400107000100000000<br>
+          0006080000207000000000000000000070000400007000300000600000070000<br>
+          0900001000070050500009004000800080007800000040000000000008020400<br>
+          5000009000700600005000000000006000000007000000076000000007000000<br>
+          0230000000000000000000010000090000080000001000000000000000000000<br>
+          0000800000030100000000070000200080000003003000070000000002100000<br>
+          9000000100000060807000210053000000020000000000100050305054000000<br>
+          00300050000007000400600000011000030000301
+          </pre>
+
+
+          <h5 class="text-blue">Second case:</h5>
+
+          <p>Maximum Confidence Level:</p>
+          <pre>
+          1000</pre>
+
+          <p>C(max) String:</p>
+          <pre>
+          0007003000000000000530000000000000000000303700000090000009090102<br>
+          0050000610006020000050000060004000000050004000000001000090000000<br>
+          0000090010000000007000070200100000000700000001000000000000000003<br>
+          9000800000060070000040043000000900000500000771000000000000700000<br>
+          0950070004600020000700000000060030000000000000000400000000079050<br>
+          2050009000000030739000904900094000000780160000001080998000000000<br>
+          0000700005000100000200000000000800000008010108007018000000000050<br>
+          0300050000090100000000007000080000000040000009030000700700000000<br>
+          0830000000080000000000005600000908000000200400000038026000031201<br>
+          0000001000020000000000050000000000005000000300000000000800000300<br>
+          3000300000090000000400000200060000000000060100000000000000007004<br>
+          5200090001000000207000000002002000000097012093000040006090000000<br>
+          5000040700000000800600701079000300000000000099000000040004020360<br>
+          7000002000040901030200000000000009900000800020404000060000005000<br>
+          0063000000072000000000000000000000050000000000000076300090106000<br>
+          000000500000600200000000000406050050001
+          </pre>
+
+          <h2 class="my-4">The Algorithm</h2>
+
+          <code>
+            <pre>
+followers = 0;
+neededFriendsTotal = 0;
+
+for (var i = 0; i <= cmax; i++) {
+    ci = i;
+
+    // if the current number of followers is bigger or
+    // equals the confidence level of the Twitter accounts
+    if (followers >= ci) {
+
+        // add number of twitterAccounts at index i to followers
+        followers += twitterAccounts[i];
+
+    } else {
+
+        // determine how many friends to ask
+        var tempNeededFriends = 0;
+
+        // take current number of followers
+        // take current value of ci index
+        // ci - followers = needed amount of friends to reach the next confidence level
+        tempNeededFriends = ci - followers;
+
+        // add amount of temporary needed friends to the total amount of friends needed
+        neededFriendsTotal += tempNeededFriends;
+
+        // calculate new number of followers
+        followers += tempNeededFriends;
+
+        // if the number of current followers equals the confindence level
+        // of the next potential followers
+        if(followers == ci) {
+            followers += twitterAccounts[i];
+        }
+    };
+};
+            </pre>
+          </code>
+          <div class="mt-5">
+            <a href="https://github.com/lindade/ebury-challenge" target="_blank" class="button px-5">Go
+              To Full Code on GitHub</a>
+          </div>
+
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          <div class="sticky-top resp-pl-5">
+
+            <h2 class="mt-5">The Answer</h2>
+            <p>Press Button to calculate how many friends you need to ask.</p>
+            <p onclick="countFriends(cmax3, array3);" class="button">First Case</p>
+            <p onclick="countFriends(cmax4, array4);" class="button">Second Case</p>
+            <div id="showTotalNumberOfFollowers" class="showResult">Number of Followers: </div>
+            <div id="showResult" class="showResult">Needed friends in total: </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="text-white text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Challenge solved by Linda Debray</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="calculateFriends.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
