@@ -149,27 +149,28 @@
 
           <h2 class="mt-4">Thought Process</h2>
           <p>
-            If the current number of <span class="text-blue">followers</span> is bigger or equals the <span
-              class="text-blue">confidence level (ci)</span> of the currently looked at Twitter
-            accounts, add number of Twitter accounts at index i of the C(max) String to followers.
+            I don't need to ask friends for help if the current number of <span class="text-blue">followers</span> is
+            bigger or equals the <span class="text-blue">confidence level (ci)</span> of the currently looked at Twitter
+            accounts. In that case the twitter users will follow my friend by themselfs so I add the number of Twitter
+            accounts at index i of the C(max) String to the total amount of followers.
           </p>
           <p>
             In case the number is lower the accounts will not follow my friend so I need to determine how many friends
             to ask to reach the currently needed confidence level of the accounts. To calculate the number of missing
-            amount of followers (friends) take <span class="text-blue">current number of followers</span> and the
-            confidence level of the accounts at the <span class="text-blue">current ci</span> index. Subtract ci from
+            followers take <span class="text-blue">current number of followers</span> and the
+            <span class="text-blue">confidence level</span> of the accounts at the current ci index. Subtract ci from
             the actual number of followers to calculate the needed amount of friends to reach the next confidence level.
           </p>
           <p>
-            Ask the calculated temporary number of friends to follow the account of your friend and add this number to
-            the <span class="text-blue">total of friends</span> you had to ask to keep count how many you had to ask in
-            total. Now when the number of current followers equals the confindence level of the accounts at index ci
-            they will start following your friend, so add this number to the counter of <span
-              class="text-blue">followers in total</span>.
+            Ask the calculated temporary number of friends to follow the account of my friend and add this number to
+            the <span class="text-blue">total of friends</span> I had to ask, to keep count of how many friends helped
+            in total. Now when the number of current followers equals the confindence level of the accounts at index ci
+            they will start following my friend, so add this number to the counter of <span class="text-blue">followers
+              in total</span>.
           </p>
           <p>
-            Start all over again and repeat the process until you reach the <span class="text-blue">maximum confidence
-              level</span> given.
+            Start all over again and repeat the process until the <span class="text-blue">maximum confidence
+              level</span> given is reached.
           </p>
 
           <h2 class="my-4">The Algorithm</h2>
