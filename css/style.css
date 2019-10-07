@@ -56,11 +56,6 @@ body {
   cursor: pointer;
 }
 
-.vertical-line {
-  margin-bottom: 100px;
-  border-right: 2px solid #f0f0f0;
-}
-
 a:link,
 a:visited {
   color: #fff;
@@ -103,6 +98,11 @@ a:hover {
 }
 
 @media(min-width: 992px) {
+  .vertical-line {
+    margin-bottom: 5rem;
+    border-right: 2px solid #f0f0f0;
+  }
+
   .resp-pl-5 {
     padding-left: 3rem;
   }
