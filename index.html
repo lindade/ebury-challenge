@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" CONTENT="ebury, challenge">
   <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css" />
@@ -35,73 +37,94 @@
   <section>
     <div class="container">
       <div class="row my-5">
-        <div class="col-sm-12 col-lg-8 vertical-line">
-          <h2 class="resp-mt-5">The Problem</h2>
-          <p>Your best friend has just opened a Twitter account and, to help make himself known, he has begun
-            to
-            follow random people.
-          </p>
+        <div class="col-sm-12 col-lg-8 vertical-line resp-mt-5">
+          <div id="accordion">
+            <!-- ACCORDION CARD 1 -->
+            <div class="accordion-header">
+              <h2>
+                <a href="#collapse1" data-parent="#accordion" data-toggle="collapse">
+                  The Problem <i class="fas fa-angle-down"></i>
+                </a>
+              </h2>
+            </div>
 
-          <p>You don’t have a Twitter account but you want to help him by making sure every person he follows
-            then
-            also follows him back.</p>
+            <div id="collapse1" class="collapse show">
+              <p>Your best friend has just opened a Twitter account and, to help make himself known, he has begun
+                to
+                follow random people.
+              </p>
 
-          <p>Initially, the account has 0 followers and every twitter account has a confidence level. An
-            account with
-            a <span class="text-blue">Ci</span> confidence level will wait until at least <span
-              class="text-blue">Ci</span> other accounts are following your friend’s twitter account
-            before also
-            following your friend.</p>
+              <p>You don’t have a Twitter account but you want to help him by making sure every person he follows
+                then
+                also follows him back.</p>
 
-          </p>For example, if <span class="text-blue">Ci = 0</span>, the account will immediately follow your
-          friend
-          back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your
-          friend once
-          it has 2 followers.</p>
+              <p>Initially, the account has 0 followers and every twitter account has a confidence level. An
+                account with
+                a <span class="text-blue">Ci</span> confidence level will wait until at least <span
+                  class="text-blue">Ci</span> other accounts are following your friend’s twitter account
+                before also
+                following your friend.</p>
 
-          <p>You know the confidence level of every account your friend has begun to follow and you're
-            prepared to ask
-            some friends that have Twitter accounts to help. Each of these friends have different confidence
-            levels
-            but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum
-            number of
-            friends that you need to ask for help to guarantee that all the accounts will follow your
-            friend’s
-            account back?</p>
+              </p>For example, if <span class="text-blue">Ci = 0</span>, the account will immediately follow your
+              friend
+              back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your
+              friend once
+              it has 2 followers.</p>
 
-          <p>The input of this problem will have the following format:
-            <ul class="text-blue">
-              <li>C(max) “Maximum Confidence Level in Account Owners”</li>
-              <li>String of C(max) + 1 single digits</li>
-            </ul>
-          </p>
+              <p>You know the confidence level of every account your friend has begun to follow and you're
+                prepared to ask
+                some friends that have Twitter accounts to help. Each of these friends have different confidence
+                levels
+                but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum
+                number of
+                friends that you need to ask for help to guarantee that all the accounts will follow your
+                friend’s
+                account back?</p>
 
-          <p>The string of digits represents the number of people of each confidence level that your friend
-            begins to
-            follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from
-            0)
-            represents how many twitter accounts with confidence level <span class="text-blue">k</span> your
-            friend
-            has begun to follow.</p>
+              <p>The input of this problem will have the following format:
+                <ul class="text-blue">
+                  <li>C(max) “Maximum Confidence Level in Account Owners”</li>
+                  <li>String of C(max) + 1 single digits</li>
+                </ul>
+              </p>
 
-          <p>For example, the string “513” would mean that your friend began to follow 5 accounts with <span
-              class="text-blue">Ci = 0</span>, 1 account with <span class="text-blue">Ci = 1</span>, and 3
-            accounts with <span class="text-blue">Ci = 2</span>, and the string “107” would mean that your
-            friend
-            began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with<br>
-            <span class="text-blue">Ci = 2</span> (and none with <span class="text-blue">Ci = 1</span>).</p>
+              <p>The string of digits represents the number of people of each confidence level that your friend
+                begins
+                to
+                follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from 0)
+                represents how many twitter accounts with confidence level <span class="text-blue">k</span> your
+                riend
+                has
+                begun to follow.
+              </p>
 
+              <p>For example, the string “513” would mean that your friend began to follow 5 accounts with <span
+                  class="text-blue">Ci = 0</span>, 1 account with <span class="text-blue">Ci = 1</span>, and 3
+                accounts with <span class="text-blue">Ci = 2</span>, and the string “107” would mean that your
+                friend
+                began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with<br>
+                <span class="text-blue">Ci = 2</span> (and none with <span class="text-blue">Ci = 1</span>).
+              </p>
+            </div>
+            <hr>
+            <!-- ACCORDION CARD 2 -->
+            <div class="accordion-header">
+              <h2>
+                <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
+                  To Solve <i class="fas fa-angle-down"></i>
+                </a>
+              </h2>
+            </div>
 
-          <h2 class="mt-5 mb-3">To Solve</h2>
+            <div id="collapse2" class="collapse">
+              <h4>First case:</h4>
 
-          <h4>First case:</h4>
-
-          <p class="text-blue">Maximum Confidence Level:</p>
-
-          <pre>
-          1000</pre>
-          <p class="text-blue">C(max) String:</p>
-          <pre>
+              <p class="text-blue">Maximum Confidence Level:</p>
+              <pre>
+          1000
+                  </pre>
+              <p class="text-blue">C(max) String:</p>
+              <pre>
           9050000000500000100000000000000000000000080000000000000600500320<br>
           0000900000000000000000000050006000000500000000000050500200000080<br>
           0800028000000000100001000009040020810000000000000000006000000400<br>
@@ -118,17 +141,18 @@
           0000800000030100000000070000200080000003003000070000000002100000<br>
           9000000100000060807000210053000000020000000000100050305054000000<br>
           00300050000007000400600000011000030000301
-          </pre>
+                  </pre>
 
 
-          <h4>Second case:</h4>
+              <h4>Second case:</h4>
 
-          <p class="text-blue">Maximum Confidence Level:</p>
-          <pre>
-          1000</pre>
+              <p class="text-blue">Maximum Confidence Level:</p>
+              <pre>
+          1000
+                  </pre>
 
-          <p class="text-blue">C(max) String:</p>
-          <pre>
+              <p class="text-blue">C(max) String:</p>
+              <pre>
           0007003000000000000530000000000000000000303700000090000009090102<br>
           0050000610006020000050000060004000000050004000000001000090000000<br>
           0000090010000000007000070200100000000700000001000000000000000003<br>
@@ -145,33 +169,60 @@
           7000002000040901030200000000000009900000800020404000060000005000<br>
           0063000000072000000000000000000000050000000000000076300090106000<br>
           000000500000600200000000000406050050001
-          </pre>
+              </pre>
+            </div>
+            <hr>
 
-          <h2 class="mt-4">Thought Process</h2>
-          <p>
-            I don't need to ask friends for help if the current number of <span class="text-blue">followers</span> is
-            bigger or equals the <span class="text-blue">confidence level (ci)</span> of the currently looked at Twitter
-            accounts. In that case the twitter users will follow my friend by themselfs so I add the number of Twitter
-            accounts at index i of the C(max) String to the total amount of followers.
-          </p>
-          <p>
-            In case the number is lower the accounts will not follow my friend so I need to determine how many friends
-            to ask to reach the currently needed confidence level of the accounts. To calculate the number of missing
-            followers take <span class="text-blue">current number of followers</span> and the
-            <span class="text-blue">confidence level</span> of the accounts at the current ci index. Subtract ci from
-            the actual number of followers to calculate the needed amount of friends to reach the next confidence level.
-          </p>
-          <p>
-            Ask the calculated temporary number of friends to follow the account of my friend and add this number to
-            the <span class="text-blue">total of friends</span> I had to ask, to keep count of how many friends helped
-            in total. Now when the number of current followers equals the confindence level of the accounts at index ci
-            they will start following my friend, so add this number to the counter of <span class="text-blue">followers
-              in total</span>.
-          </p>
-          <p>
-            Start all over again and repeat the process until the <span class="text-blue">maximum confidence
-              level</span> given is reached.
-          </p>
+            <!-- ACCORDION CARD 3 -->
+            <div class="accordion-header">
+              <h2>
+                <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
+                  Thought Process <i class="fas fa-angle-down"></i>
+                </a>
+              </h2>
+            </div>
+
+            <div id="collapse3" class="collapse">
+              <p>
+                I don't need to ask friends for help if the current number of <span class="text-blue">followers</span>
+                is
+                bigger or equals the <span class="text-blue">confidence level (ci)</span> of the currently looked at
+                Twitter
+                accounts. In that case the twitter users will follow my friend by themselves so I add the number of
+                Twitter
+                accounts at index i of the C(max) String to the total amount of followers.
+              </p>
+              <p>
+                In case the number is lower the accounts will not follow my friend so I need to determine how many
+                friends
+                to ask to reach the currently needed confidence level of the accounts. To calculate the number of
+                missing
+                followers take <span class="text-blue">current number of followers</span> and the
+                <span class="text-blue">confidence level</span> of the accounts at the current ci index. Subtract ci
+                from
+                the actual number of followers to calculate the needed amount of friends to reach the next confidence
+                level.
+              </p>
+              <p>
+                Ask the calculated temporary number of friends to follow the account of my friend and add this number to
+                the <span class="text-blue">total of friends</span> I had to ask, to keep count of how many friends
+                helped
+                in total. Now when the number of current followers equals the confindence level of the accounts at index
+                ci
+                they will start following my friend, so add this number to the counter of <span
+                  class="text-blue">followers
+                  in total</span>.
+              </p>
+              <p>
+                Start all over again and repeat the process until the <span class="text-blue">maximum confidence
+                  level</span> given is reached.
+              </p>
+
+            </div>
+            <hr>
+
+            <!-- End of Accordion-->
+          </div>
 
           <h2 class="my-4">The Algorithm</h2>
           <code>
@@ -220,13 +271,16 @@ for (var i = 0; i <= cmax; i++) {
     <div class="container">
       <div class="row">
         <div class="col">
-          <p>Challenge solved by Linda Debray</p>
+          <p>Challenge solved 2017 by Linda Debray</p>
         </div>
       </div>
     </div>
   </footer>
 
   <script type="text/javascript" src="calculateFriends.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
