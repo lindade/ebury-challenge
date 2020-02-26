@@ -30,6 +30,8 @@
   <section class="bar-blue">
     <div class="container">
       <h1 class="heading-bar-blue">Ebury Challenge l Solution</h1>
+      <p class="text-center">Presentation of my solution to a coding challenge given by Ebury solved with JavaScript.
+      </p>
     </div>
   </section>
 
@@ -41,75 +43,64 @@
           <div id="accordion">
             <!-- ACCORDION CARD 1 -->
             <div class="accordion-header">
-              <h2>
+              <h2 class="text-center text-sm-left">
                 <a href="#collapse1" data-parent="#accordion" data-toggle="collapse">
                   The Problem <i class="fas fa-angle-down"></i>
                 </a>
               </h2>
             </div>
 
-            <div id="collapse1" class="collapse show">
+            <div id="collapse1" class="collapse text-center text-sm-left">
               <p>Your best friend has just opened a Twitter account and, to help make himself known, he has begun
-                to
-                follow random people.
+                to follow random people.
               </p>
 
               <p>You don’t have a Twitter account but you want to help him by making sure every person he follows
-                then
-                also follows him back.</p>
+                then also follows him back.
+              </p>
 
               <p>Initially, the account has 0 followers and every twitter account has a confidence level. An
-                account with
-                a <span class="text-blue">Ci</span> confidence level will wait until at least <span
-                  class="text-blue">Ci</span> other accounts are following your friend’s twitter account
-                before also
-                following your friend.</p>
+                account with a <span class="text-blue">Ci</span> confidence level will wait until at least
+                <span class="text-blue">Ci</span> other accounts are following your friend’s twitter account
+                before also following your friend.
+              </p>
 
               </p>For example, if <span class="text-blue">Ci = 0</span>, the account will immediately follow your
-              friend
-              back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your
-              friend once
-              it has 2 followers.</p>
+              friend back whereas a twitter account with <span class="text-blue">Ci = 2</span> will only follow your
+              friend once it has 2 followers.
+              </p>
 
-              <p>You know the confidence level of every account your friend has begun to follow and you're
-                prepared to ask
-                some friends that have Twitter accounts to help. Each of these friends have different confidence
-                levels
-                but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum
-                number of
-                friends that you need to ask for help to guarantee that all the accounts will follow your
-                friend’s
-                account back?</p>
+              <p>You know the confidence level of every account your friend has begun to follow and you're prepared to
+                ask some friends that have Twitter accounts to help. Each of these friends have different confidence
+                levels but all can be <span class="text-blue">Ci = 0</span>, it does not matter. What is the minimum
+                number of friends that you need to ask for help to guarantee that all the accounts will follow your
+                friend’s account back?
+              </p>
 
               <p>The input of this problem will have the following format:
-                <ul class="text-blue">
+                <ul class="text-blue text-left">
                   <li>C(max) “Maximum Confidence Level in Account Owners”</li>
                   <li>String of C(max) + 1 single digits</li>
                 </ul>
               </p>
 
-              <p>The string of digits represents the number of people of each confidence level that your friend
-                begins
-                to
-                follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from 0)
-                represents how many twitter accounts with confidence level <span class="text-blue">k</span> your
-                riend
-                has
-                begun to follow.
+              <p>The string of digits represents the number of people of each confidence level that your friend begins
+                to follow, so the <span class="text-blue">k</span>th digit of this string (counting starting from 0)
+                represents how many twitter accounts with confidence level <span class="text-blue">k</span> your friend
+                has begun to follow.
               </p>
 
               <p>For example, the string “513” would mean that your friend began to follow 5 accounts with <span
                   class="text-blue">Ci = 0</span>, 1 account with <span class="text-blue">Ci = 1</span>, and 3
                 accounts with <span class="text-blue">Ci = 2</span>, and the string “107” would mean that your
-                friend
-                began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with<br>
+                friend began to follow 1 account with <span class="text-blue">Ci = 0</span> and 7 accounts with<br>
                 <span class="text-blue">Ci = 2</span> (and none with <span class="text-blue">Ci = 1</span>).
               </p>
             </div>
             <hr>
             <!-- ACCORDION CARD 2 -->
             <div class="accordion-header">
-              <h2>
+              <h2 class="text-center text-sm-left">
                 <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
                   To Solve <i class="fas fa-angle-down"></i>
                 </a>
@@ -175,43 +166,34 @@
 
             <!-- ACCORDION CARD 3 -->
             <div class="accordion-header">
-              <h2>
+              <h2 class="text-center text-sm-left">
                 <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
                   Thought Process <i class="fas fa-angle-down"></i>
                 </a>
               </h2>
             </div>
 
-            <div id="collapse3" class="collapse">
+            <div id="collapse3" class="collapse show text-center text-sm-left">
               <p>
                 I don't need to ask friends for help if the current number of <span class="text-blue">followers</span>
-                is
-                bigger or equals the <span class="text-blue">confidence level (ci)</span> of the currently looked at
-                Twitter
-                accounts. In that case the twitter users will follow my friend by themselves so I add the number of
-                Twitter
-                accounts at index i of the C(max) String to the total amount of followers.
+                is bigger or equals the <span class="text-blue">confidence level (ci)</span> of the currently looked at
+                Twitter accounts. In that case the twitter users will follow my friend by themselves so I add the number
+                of Twitter accounts at index i of the C(max) String to the total amount of followers.
               </p>
               <p>
                 In case the number is lower the accounts will not follow my friend so I need to determine how many
-                friends
-                to ask to reach the currently needed confidence level of the accounts. To calculate the number of
-                missing
-                followers take <span class="text-blue">current number of followers</span> and the
+                friends to ask to reach the currently needed confidence level of the accounts. To calculate the number
+                of missing followers take <span class="text-blue">current number of followers</span> and the
                 <span class="text-blue">confidence level</span> of the accounts at the current ci index. Subtract ci
-                from
-                the actual number of followers to calculate the needed amount of friends to reach the next confidence
-                level.
+                from the actual number of followers to calculate the needed amount of friends to reach the next
+                confidence level.
               </p>
               <p>
                 Ask the calculated temporary number of friends to follow the account of my friend and add this number to
                 the <span class="text-blue">total of friends</span> I had to ask, to keep count of how many friends
-                helped
-                in total. Now when the number of current followers equals the confindence level of the accounts at index
-                ci
-                they will start following my friend, so add this number to the counter of <span
-                  class="text-blue">followers
-                  in total</span>.
+                helped in total. Now when the number of current followers equals the confindence level of the accounts
+                at index ci they will start following my friend, so add this number to the counter of <span
+                  class="text-blue">followers in total</span>.
               </p>
               <p>
                 Start all over again and repeat the process until the <span class="text-blue">maximum confidence
@@ -224,7 +206,7 @@
             <!-- End of Accordion-->
           </div>
 
-          <h2 class="my-4">The Algorithm</h2>
+          <h2 class="my-4 text-center text-sm-left">The Algorithm</h2>
           <code>
             <pre>
 followers = 0;
@@ -246,7 +228,7 @@ for (var i = 0; i <= cmax; i++) {
 };
             </pre>
           </code>
-          <div class="mt-5">
+          <div class="mt-5 text-center text-sm-left">
             <a href="https://github.com/lindade/ebury-challenge" target="_blank" class="button px-5">Go
               To Full Code on GitHub</a>
           </div>
@@ -255,8 +237,8 @@ for (var i = 0; i <= cmax; i++) {
         <div class="col-sm-12 col-lg-4">
           <div class="sticky-top resp-pl-5">
 
-            <h2 class="mt-5">The Answer</h2>
-            <p>Press Button to calculate how many friends you need to ask.</p>
+            <h2 class="mt-5 text-center text-sm-left">The Answer</h2>
+            <p class="text-center text-sm-left">Press Button to calculate how many friends you need to ask.</p>
             <p onclick="countFriends(cmax3, array3);" class="button">First Case</p>
             <p onclick="countFriends(cmax4, array4);" class="button">Second Case</p>
             <div id="showTotalNumberOfFollowers" class="showResult">Number of Followers: </div>
