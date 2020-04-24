@@ -22,7 +22,7 @@ body {
   font-weight: 600;
   position: absolute;
   top: 12px;
-  left: 93px;
+  padding-left: .5rem;
 }
 
 .bar-blue {
