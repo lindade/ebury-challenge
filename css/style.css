@@ -40,6 +40,16 @@ body {
   color: #00bef0;
 }
 
+.fa-angle-down {
+  transition: .3s;
+}
+
+.chevron.active .fa-angle-down,
+.chevron-2.active .fa-angle-down,
+.chevron-3.active .fa-angle-down {
+  transform: rotate(-180deg);
+}
+
 .accordion-header a {
   color: #000;
 }
