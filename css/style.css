@@ -66,10 +66,18 @@ body {
   cursor: pointer;
 }
 
+.code {
+  background-color: #000;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: .3rem;
+}
+
 a:link,
 a:visited {
   color: #fff;
   text-decoration: none;
+  transition: all .2s;
 }
 
 a:hover {
@@ -87,6 +95,7 @@ a:hover {
   font-size: 1.1rem;
   letter-spacing: 1px;
   text-align: center;
+  transition: all .2s;
 }
 
 .button:hover {
